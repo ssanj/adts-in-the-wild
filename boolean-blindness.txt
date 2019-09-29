@@ -1,0 +1,18 @@
+# Boolean blindness
+
+## Pros
+- Less types to define (boiler plate)
+- Loss of stand functions that work on Boolean (we lose the API of the standard types)
+
+## Cons
+- Easier to make mistakes
+- Values are not checked by the compiler
+
+
+### More of the same
+- Int (ports, buffer sizes, time)
+- Strings (names, values, quantities etc)
+- Option (to represent Booleans, instead of presence and absence of a value)
+- Either (to present a choice of any two values, instead of errors and valid values)
+- Pairs (Just a joining of multiple types without specifying their relationship)
+- List (???)

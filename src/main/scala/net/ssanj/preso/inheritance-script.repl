@@ -1,0 +1,35 @@
+//run in the repl from a `console` session
+//v1
+
+import net.ssanj.preso.Inheritance._
+import net.ssanj.preso.Inheritance.v1._
+import io.circe.syntax._
+import io.circe.Json
+
+val l1 = ListingSubmittedEvent(EventId("A1"), EventName("blee"))
+
+val l2 = ListingProcessedEvent(EventId("A2"), EventName("blue"), ListingId("1000A2"))
+
+val l3 = ListingFailedToProcessedEvent(EventId("A3"), EventName("bleue"), ListingProcessingFailure("ZOMG!"))
+
+l1.asJson
+l2.asJson
+l3.asJson
+
+//---
+
+//v2
+import net.ssanj.preso.Inheritance._
+import net.ssanj.preso.Inheritance.v2._
+import io.circe.syntax._
+import io.circe.Json
+
+val l1: Event = ListingSubmittedEvent(EventDetails(EventId("A1"), EventName("blee")))
+
+val l2: Event = ListingProcessedEvent(EventDetails(EventId("A2"), EventName("blue")), ListingId("1000A2"))
+
+val l3: Event = ListingFailedToProcessedEvent(EventDetails(EventId("A3"), EventName("bleue")), ListingProcessingFailure("ZOMG!"))
+
+l1.asJson
+l2.asJson
+l3.asJson
