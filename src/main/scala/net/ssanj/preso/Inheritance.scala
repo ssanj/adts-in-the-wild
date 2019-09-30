@@ -186,10 +186,19 @@ object Inheritance {
 //[4] This seems to be the rule when we most ready-made Sum types:
 //Option(Some, None)
 //Either(Left, Right)
+def processUser3(someUser: Right[Throwable, User]): Result = ???
+
 //Try(Success, Failure)
+def processUser4(someUser: util.Success[User]): Result = ???
+
 //List(Nil, Cons)
+def processUser5(someUser: ::[User]): Result = ???
+
 //cats.Validated(Invalid, Valid)
 //cats.Eval(Always, Defer, FlatMap, Later, Now)
+
+
+
 
 
 

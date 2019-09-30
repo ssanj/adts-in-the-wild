@@ -2,3 +2,7 @@
 
 Adts in the wild
 
+- BooleanBlindness
+- StringlyTyped
+- EitherToTheMax
+- Inheritance
