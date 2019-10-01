@@ -2,7 +2,7 @@ package net.ssanj.preso
 
 import io.circe.Json
 
-object EitherToTheMax {
+object AlgaebraicBlindness {
 
   //[1]
   final case class InvalidRequest(kvp: Map[String, String])

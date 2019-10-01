@@ -2,7 +2,8 @@
 
 Adts in the wild
 
+- Basics
 - BooleanBlindness
 - StringlyTyped
-- EitherToTheMax
+- AlgaebraicBlindness
 - Inheritance
