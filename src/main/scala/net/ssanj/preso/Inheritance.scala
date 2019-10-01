@@ -60,8 +60,10 @@ object Inheritance {
 
 
 
-  //[2] Have we seen code like this? If not why not?
+  //[2] Have we seen code like this?
   def processUser(someUser: Option2.Some[User]): Result = ???
+  
+
   
 
 
@@ -185,14 +187,41 @@ object Inheritance {
 
 //[4] This seems to be the rule when we most ready-made Sum types:
 //Option(Some, None)
+
+
+
+
+
+
 //Either(Left, Right)
 def processUser3(someUser: Right[Throwable, User]): Result = ???
+
+
+
+
+
+
+
+
+
 
 //Try(Success, Failure)
 def processUser4(someUser: util.Success[User]): Result = ???
 
+
+
+
+
+
+
 //List(Nil, Cons)
 def processUser5(someUser: ::[User]): Result = ???
+
+
+
+
+
+
 
 //cats.Validated(Invalid, Valid)
 //cats.Eval(Always, Defer, FlatMap, Later, Now)
@@ -241,9 +270,53 @@ def processUser5(someUser: ::[User]): Result = ???
 
 
 
+//[5] Scala3
+
+// enum Option2[+T] {
+//   case Some2(x: T)
+//   case None2
+// }
+
+// def onlySome[A](some: Some2[A]): A = some.x
 
 
-  //[5]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //[6]
   final case class EventId(value: String)
   final case class EventName(value: String)
   final case class ListingId(value: String)
@@ -256,9 +329,9 @@ def processUser5(someUser: ::[User]): Result = ???
       val eventName: EventName
     }
 
-    final case class ListingSubmittedEvent(val eventId: EventId, val eventName: EventName) extends Event
-    final case class ListingProcessedEvent(val eventId: EventId, val eventName: EventName, listingId: ListingId) extends Event
-    final case class ListingFailedToProcessedEvent(val eventId: EventId, val eventName: EventName, failure: ListingProcessingFailure) extends Event
+    final case class ListingSubmittedEvent(eventId: EventId, eventName: EventName) extends Event
+    final case class ListingProcessedEvent(eventId: EventId, eventName: EventName, listingId: ListingId) extends Event
+    final case class ListingFailedToProcessedEvent(eventId: EventId, eventName: EventName, failure: ListingProcessingFailure) extends Event
 
 
     //encoders
@@ -328,7 +401,7 @@ def processUser5(someUser: ::[User]): Result = ???
 
 
 
-//[6] Can we encode the same information:
+//[7] Can we encode the same information:
 // 1. Without Inheritance
 // 2. Without Using the values of a Sum type as proper types
 

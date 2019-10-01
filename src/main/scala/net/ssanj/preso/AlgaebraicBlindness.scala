@@ -13,7 +13,7 @@ object AlgaebraicBlindness {
 
   def getMessage(request: Request): Either[RequestError, Either[InvalidRequest, ValidRequestWithPayload]] = ???
 
-  def processMessage(request: Request) = {
+  def processMessage(request: Request) = {  
     getMessage(request) match {
       case Left(error) => ???
       case Right(Left(invalid)) => ???

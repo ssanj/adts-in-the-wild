@@ -134,7 +134,7 @@ object StringlyTyped {
     case object None extends FilterLevel
     case object Low extends FilterLevel
     case object Medium extends FilterLevel
-    //case object High extends FilterLevel
+    // case object High extends FilterLevel
   }
 
 
